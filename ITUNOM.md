@@ -1,5 +1,4 @@
 # ITÜNOM
-___
 The UAV was designed to attain completion in all missions. It is able to fly and land autonomously, follow waypoints with high accuracy, carry and drop a UGV, generate a map from captured images, search for standard and emergent objects and avoid both stationary and moving obstacles.
 ## Initial Decisions
 The first decision was selecting a vehicle type. A fixed wing vehicle type was chosen, and other structural aspects were focused on to provide sufficient stability for the autonomous detection and mapping missions and maneuverability for precise and time efficient flight.	
@@ -10,7 +9,9 @@ Autonomous algorithms are primarily used for ODCL. An emergency manual approach 
 ### ROI
 The algorithm autonomously detects regions of interest (ROI) then picks up unique features such as shape, letter, color, location, and orientation of the object. Low memory consumption, high speed, and accuracy are crucial; therefore, computer vision algorithms are preferable over neural network algorithms. **OpenCV** library is used with **Python**.
 
-The algorithm is visualized in the flowchart:  ![alt text](https://github.com/youssefmohamed0/test/blob/main/flowchart.png)
+The algorithm is visualized in the flowchart:
+
+![alt text](https://github.com/youssefmohamed0/test/blob/main/images/itunom%20pictures/Picture3.png)
 
 1.	Image is captured then sent to server through mission computer.
 2.	Image is smoothed and Canny edge detection algorithm is applied.
@@ -27,7 +28,8 @@ A user interface is designed for manual ODCL to be used to compensate for the fa
 ## Mapping
 Photos will be taken by UAV, and a map will be created using image stitching algorithms. 
 The number of photos used in merging will be calculated using the following equation.
-![Alt text]()
+
+![Alt text](https://github.com/youssefmohamed0/test/blob/main/images/itunom%20pictures/Picture2.png)
 
 From the formula, it was calculated that approximately 42 photos should be taken at an altitude of 1200 feet from the center of the map.
 
@@ -52,7 +54,7 @@ With this approach if the UAV finds an obstacle on its path, the fight plan will
 ### Dynamic Obstacles
 In order to avoid moving obstacles, telemetry data of opposing aircraft is retrieved from the interoperability system every second. Among these data, the position, speed, and altitude.
 
-![Alt text]()
+![Alt text](https://github.com/youssefmohamed0/test/blob/main/images/itunom%20pictures/Picture4.png)
 ## Communications
 The communication infrastructure is built upon four legs: telemetry data transfer to GCS, manual control, ODCL data transfer over Wi-Fi, and real-time image transfer.
 
